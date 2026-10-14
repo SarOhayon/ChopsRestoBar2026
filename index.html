@@ -3,265 +3,344 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Chops Resto-Bar: kosher Asian fusion steakhouse and sushi bar at 5322 Queen Mary Rd, Montréal. Order online for pickup or delivery.">
+<meta name="description" content="Chops Resto-Bar: kosher Asian fusion steakhouse and sushi bar at 5322 Queen Mary Rd, Montréal. Order online, reserve a table or book a private event.">
+<link rel="icon" href="chops-logo.svg">
 <title>Chops 2020 Restobar</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Bodoni+Moda:ital,opsz,wght@1,6..96,500;1,6..96,700&family=Outfit:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap">
 <style>
-/* Layout: black lacquer night room. The real heart logo leads; lime wordmark type for headings, Bodoni italics for the chic accents, red reserved for love/heat. */
+/* Layout: high-end steakhouse. Black and white with lime only on the logo and actions. Upright, readable type; space does the luxury work. */
 :root{
-  --black:#0b0b0a;
-  --coal:#151513;
-  --lime:#8cc63f;      /* logo green */
-  --red:#e3262b;       /* heart red */
-  --white:#f5f0e4;
-  --muted:#a9a596;
-  --line:rgba(140,198,63,.22);
-  --wide:"Unbounded","Arial Black",Helvetica,sans-serif;
-  --chic:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
-  --body:"Outfit","Helvetica Neue",Arial,sans-serif;
-  --mono:"DM Mono",ui-monospace,Menlo,monospace;
+  --black:#0a0a09;
+  --coal:#141412;
+  --paper:#f7f5f0;     /* white sections */
+  --ink:#121210;       /* text on white */
+  --lime:#8cc63f;      /* logo green: logo, buttons, small marks */
+  --red:#e3262b;       /* status only */
+  --white:#f7f5f0;
+  --soft:#cfcbc0;      /* body text on black, high contrast */
+  --line:rgba(247,245,240,.16);
+  --line-dark:rgba(18,18,16,.14);
+  --head:"Jost","Futura","Avenir Next",Helvetica,sans-serif;
+  --body:"Manrope","Helvetica Neue",Arial,sans-serif;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
+body{margin:0}
 html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--white);font-family:var(--body);font-weight:300;font-size:1rem;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--black);color:var(--white);font-family:var(--body);font-weight:400;font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:4px}
 .wrap{max-width:1180px;margin-inline:auto;padding-inline:clamp(16px,4vw,40px)}
-.eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--lime);margin:0 0 14px}
-h1,h2,h3{margin:0;text-wrap:balance}
-h2{font-family:var(--wide);font-weight:800;font-size:clamp(1.9rem,5vw,3.6rem);line-height:1.02;letter-spacing:-.01em;text-transform:uppercase}
-h2 em{font-family:var(--chic);font-style:italic;font-weight:500;text-transform:none;color:var(--lime);letter-spacing:0}
+.label{font-family:var(--head);font-weight:500;font-size:.85rem;letter-spacing:.16em;text-transform:uppercase;color:var(--lime);margin:0 0 12px}
+h1,h2,h3{margin:0;text-wrap:balance;font-family:var(--head);font-weight:500}
+h2{font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.1;letter-spacing:.01em}
 .sec{padding-block:clamp(64px,10vw,120px)}
-.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px;margin-bottom:44px}
-.head p{max-width:44ch;color:var(--muted);margin:0}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px;margin-bottom:40px}
+.head p{max-width:46ch;color:var(--soft);margin:0}
+
+/* logo */
+.mark{display:block;width:100%;height:auto}
+.mark *{fill:none;stroke:var(--lime);stroke-width:14;stroke-linecap:round;stroke-linejoin:round}
+.brand{display:grid;justify-items:center;gap:clamp(12px,2vw,20px);text-align:center}
+.brand .mark{width:min(560px,86vw)}
+.tagline{font-family:var(--head);font-weight:500;font-size:clamp(.82rem,1.7vw,1.15rem);letter-spacing:.2em;text-transform:uppercase;color:var(--white);line-height:1.5}
+.tagline b{color:var(--lime);font-weight:500}
 
 /* buttons */
-.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--wide);font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:15px 24px;border-radius:999px;border:1.5px solid transparent;transition:transform .2s,background .2s,color .2s,box-shadow .2s;white-space:nowrap;cursor:pointer}
-.btn:hover{transform:translateY(-2px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--head);font-weight:500;font-size:.95rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:16px 28px;min-width:200px;border-radius:2px;border:1.5px solid transparent;transition:background .2s,color .2s,border-color .2s;white-space:nowrap;cursor:pointer}
 .btn-lime{background:var(--lime);color:var(--black)}
-.btn-lime:hover{box-shadow:0 10px 30px rgba(140,198,63,.35)}
+.btn-lime:hover{background:#9fd552}
 .btn-line{border-color:var(--white);color:var(--white);background:transparent}
 .btn-line:hover{background:var(--white);color:var(--black)}
-.btn .arr{transition:transform .2s}
-.btn:hover .arr{transform:translateX(4px)}
+.btn-dark{background:var(--ink);color:var(--white)}
+.btn-dark:hover{background:#2a2a26}
+.pair{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.pair .btn{flex:1 1 200px;max-width:280px}
 
 /* nav */
-.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(11,11,10,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:10px}
-.nav img{height:22px;width:auto;display:block}
-.links{display:flex;gap:24px;align-items:center}
-.links a.t{text-decoration:none;font-size:.88rem;color:var(--muted);transition:color .2s}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(10,10,9,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:14px}
+.nav .home{display:block;width:120px}
+.links{display:flex;gap:22px;align-items:center}
+.links a.t{text-decoration:none;font-family:var(--head);font-size:.95rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
 .links a.t:hover{color:var(--white)}
-.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
-.lang button{background:none;border:0;color:var(--muted);font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;padding:7px 11px;cursor:pointer}
-.lang button[aria-pressed="true"]{background:var(--lime);color:var(--black)}
-.nav .btn{padding:11px 18px;font-size:.7rem}
-@media (max-width:900px){.links a.t{display:none}}
-@media (max-width:520px){.nav .btn{display:none}.nav img{height:18px}}
+.lang{display:flex;border:1px solid var(--line);border-radius:2px;overflow:hidden}
+.lang button{background:none;border:0;color:var(--soft);font-family:var(--head);font-size:.8rem;letter-spacing:.1em;padding:7px 10px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--white);color:var(--black)}
+.nav .btn{min-width:0;padding:10px 16px;font-size:.8rem}
+@media (max-width:980px){.links a.t{display:none}}
+@media (max-width:560px){.nav .btn-line{display:none}.nav .home{width:96px}}
 
-/* hero */
-.hero{position:relative;overflow:hidden;padding-block:clamp(40px,7vw,90px) clamp(48px,7vw,90px);
-  background:radial-gradient(800px 420px at 72% 40%,rgba(227,38,43,.18),transparent 65%),radial-gradient(600px 400px at 10% 90%,rgba(140,198,63,.10),transparent 70%)}
-.hero .wrap{display:grid;grid-template-columns:1fr;gap:clamp(24px,4vw,44px)}
-.hero h1{font-family:var(--chic);font-style:italic;font-weight:500;font-size:clamp(2.2rem,4.6vw,3.8rem);line-height:1.04;max-width:18ch}
-.hero h1 b{font-weight:700;color:var(--red)}
-.hero .lede{max-width:40ch;font-size:clamp(1.02rem,1.5vw,1.2rem);color:var(--muted);margin:22px 0 30px}
-.cta{display:flex;flex-wrap:wrap;gap:12px}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
-.chip{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:6px 12px;color:var(--muted)}
-.chip.live{border-color:var(--lime);color:var(--lime)}
-.chip.live::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:currentColor;margin-right:8px;vertical-align:1px;animation:pulse 2s infinite}
-.chip.shut{border-color:var(--red);color:var(--red)}
-@keyframes pulse{50%{opacity:.25}}
-.logo-stage{position:relative;width:min(980px,100%)}
-.logo-stage img{width:100%;height:auto;display:block;animation:glow 5s ease-in-out infinite;filter:drop-shadow(0 0 28px rgba(140,198,63,.28))}
-.logo-stage .tl{display:block;margin-top:clamp(10px,1.6vw,18px);font-family:var(--wide);font-weight:500;font-size:clamp(.62rem,1.55vw,1.05rem);letter-spacing:.14em;text-transform:uppercase;color:var(--white)}
-.logo-stage .tl b{color:var(--red);font-weight:700}
-@keyframes glow{0%,100%{filter:drop-shadow(0 0 18px rgba(140,198,63,.18))}50%{filter:drop-shadow(0 0 36px rgba(140,198,63,.42))}}
+/* hero: three styles to choose from */
+.hero{position:relative;overflow:hidden}
+.hero .v{display:none}
+.hero[data-style="photo"] .v-photo,.hero[data-style="minimal"] .v-minimal,.hero[data-style="split"] .v-split{display:block}
+.v-photo{position:relative;padding-block:clamp(90px,14vw,170px)}
+.v-photo .bg{position:absolute;inset:0;background:url("food/grill.jpg") center/cover no-repeat;filter:blur(3px) brightness(.32) saturate(1.1);transform:scale(1.08)}
+.v-photo .wrap{position:relative;display:grid;gap:36px;justify-items:center}
+.v-minimal{padding-block:clamp(80px,12vw,150px)}
+.v-minimal .wrap{display:grid;gap:36px;justify-items:center}
+.v-minimal .rule{width:min(560px,86vw);height:1px;background:var(--line)}
+.v-minimal p,.v-photo p{margin:0;max-width:50ch;text-align:center;color:var(--soft)}
+.v-split{padding-block:clamp(56px,8vw,100px)}
+.v-split .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
+.v-split .brand{justify-items:start;text-align:left}
+.v-split .brand .mark{width:min(480px,100%)}
+.v-split p{color:var(--soft);max-width:42ch;margin:0}
+.v-split .pair{justify-content:flex-start}
+.frame{position:relative;max-width:100%;aspect-ratio:4/5;justify-self:end;width:min(440px,100%)}
+.frame img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
+.frame::before{content:"";position:absolute;inset:-14px 14px 14px -14px;border:1px solid var(--lime)}
+@media (max-width:860px){.v-split .wrap{grid-template-columns:1fr}.frame{justify-self:center;width:min(360px,90%)}}
+.chooser{position:absolute;z-index:5;top:14px;right:clamp(16px,4vw,40px);display:flex;align-items:center;gap:6px;background:rgba(10,10,9,.85);border:1px dashed var(--lime);padding:6px 6px 6px 12px;font-family:var(--head);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+.chooser button{background:none;border:1px solid var(--line);color:var(--white);font:inherit;padding:5px 9px;cursor:pointer}
+.chooser button[aria-pressed="true"]{background:var(--lime);color:var(--black);border-color:var(--lime)}
+.events .wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3vw,32px)}
+.events .intro{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px;margin-bottom:8px}
+.events .intro p{max-width:50ch;color:var(--soft);margin:0}
+.room{border:1px solid var(--line);padding:clamp(24px,3vw,36px);display:grid;gap:14px;align-content:start}
+.room .cap{font-family:var(--head);font-size:clamp(2.6rem,5vw,3.6rem);line-height:1;color:var(--lime)}
+.room .cap small{font-size:.9rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-left:10px}
+.room h3{font-size:1.5rem;letter-spacing:.04em}
+.room p{margin:0;color:var(--soft)}
+.room ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.room li{border:1px solid var(--line);padding:4px 10px;font-size:.9rem;color:var(--white)}
+.events .cta{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;margin-top:8px;color:var(--soft)}
+@media (max-width:760px){.events .wrap{grid-template-columns:1fr}}
+.amex{font-size:.95rem;color:#55534c}
+.slogan{font-family:var(--head);font-size:clamp(1.1rem,2.2vw,1.4rem);letter-spacing:.08em;color:var(--white);margin:0}
+@media (max-width:600px){.chooser{position:relative;top:auto;right:auto;margin:12px 16px;flex-wrap:wrap;justify-content:center}}
+.status{display:inline-block;font-family:var(--head);font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.status i{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--lime);margin-right:8px;vertical-align:1px}
+.status.shut i{background:var(--red)}
 
-
-/* ticker */
-.ticker{background:var(--lime);color:var(--black);overflow:hidden;white-space:nowrap}
-.ticker .track{display:inline-flex;gap:36px;padding-block:14px;animation:slide 40s linear infinite;font-family:var(--wide);font-weight:800;font-size:clamp(1rem,2vw,1.35rem);text-transform:uppercase}
-.ticker .track span::after{content:"♥";color:var(--red);margin-left:36px}
-@keyframes slide{to{transform:translateX(-50%)}}
-
-/* sushi */
-.sushi{background:var(--coal);border-block:1px solid var(--line)}
-.sushi .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,80px);align-items:center}
-.sushi p.body{color:var(--muted);max-width:48ch}
-.board-art{position:relative;aspect-ratio:5/3;max-width:100%;border-radius:10px;background:linear-gradient(160deg,#3a2a1c,#22180f);box-shadow:0 30px 70px rgba(0,0,0,.6),inset 0 0 0 1px rgba(255,255,255,.05);overflow:hidden}
-.board-art::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 2px,transparent 2px 22px)}
-.roll{position:absolute;width:15%;aspect-ratio:1;border-radius:50%;background:#101010;box-shadow:0 6px 14px rgba(0,0,0,.5)}
-.roll::before{content:"";position:absolute;inset:14%;border-radius:50%;background:#f3efe6}
-.roll::after{content:"";position:absolute;inset:36%;border-radius:40%;background:radial-gradient(circle at 40% 40%,#ff8a5b,#e0583a)}
-.roll.g::after{background:radial-gradient(circle at 40% 40%,#b8e07a,#6ea52e)}
-.nigiri{position:absolute;width:22%;height:14%;border-radius:40% 40% 30% 30%;background:repeating-linear-gradient(115deg,#ff8a5b 0 8px,#ffb08a 8px 11px);box-shadow:0 10px 0 -2px #f3efe6,0 14px 18px rgba(0,0,0,.45)}
-.wasabi{position:absolute;width:7%;aspect-ratio:1.2;border-radius:50% 50% 45% 45%;background:var(--lime)}
-.ginger{position:absolute;width:10%;aspect-ratio:1.4;border-radius:50%;background:#f4b7b0;opacity:.9}
-.sushi-list{display:grid;gap:0;margin-top:26px;border-top:1px solid var(--line)}
-.sushi-list div{display:flex;justify-content:space-between;gap:16px;padding-block:12px;border-bottom:1px solid var(--line);font-family:var(--chic);font-style:italic;font-size:1.25rem}
-.sushi-list span{font-family:var(--mono);font-style:normal;font-size:.75rem;color:var(--muted);align-self:center;letter-spacing:.1em;text-transform:uppercase}
-@media (max-width:860px){.sushi .wrap{grid-template-columns:1fr}}
-
-/* menu */
-.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
-.tabs button{font-family:var(--wide);font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;background:transparent;color:var(--muted);border:1.5px solid var(--line);border-radius:999px;padding:10px 16px;cursor:pointer;transition:all .2s}
-.tabs button:hover{color:var(--white);border-color:var(--white)}
-.tabs button[aria-selected="true"]{background:var(--white);color:var(--black);border-color:var(--white)}
-.menu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 56px;border-top:1px solid var(--line)}
-.dish{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding-block:20px;border-bottom:1px solid var(--line)}
-.dish h3{font-family:var(--chic);font-style:italic;font-weight:500;font-size:1.45rem;line-height:1.2}
-.dish .price{font-family:var(--mono);color:var(--lime);align-self:center;font-variant-numeric:tabular-nums}
-.dish p{grid-column:1/-1;margin:0;color:var(--muted);font-size:.94rem}
-.tag{font-family:var(--mono);font-style:normal;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white);background:var(--red);border-radius:3px;padding:2px 6px;margin-left:10px;vertical-align:.4em}
-.note{display:flex;gap:12px;align-items:center;margin-top:24px;padding:14px 18px;border:1px dashed var(--lime);border-radius:8px;color:var(--muted);font-size:.9rem}
-.note b{color:var(--lime);font-family:var(--mono);font-weight:500;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
-@media (max-width:760px){.menu{grid-template-columns:1fr}}
-
-/* category cards */
+/* white menu section */
+.light{background:var(--paper);color:var(--ink)}
+.light .label{color:#4d7a17}
+.light .head p{color:#55534c}
+.favs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 56px;border-top:1px solid var(--line-dark);margin-bottom:56px}
+.dish{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding-block:20px;border-bottom:1px solid var(--line-dark)}
+.dish h3{font-size:1.3rem;letter-spacing:.02em}
+.dish .price{font-family:var(--head);font-size:1.1rem;align-self:center;font-variant-numeric:tabular-nums}
+.dish p{grid-column:1/-1;margin:0;color:#55534c;font-size:1rem}
+.tag{font-family:var(--head);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);border:1px solid var(--ink);padding:2px 7px;margin-left:10px;vertical-align:.25em}
+@media (max-width:760px){.favs{grid-template-columns:1fr}}
 .cats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
-.cat{position:relative;display:block;aspect-ratio:1;max-width:100%;border-radius:10px;overflow:hidden;text-decoration:none;color:var(--white);background:var(--coal)}
+.cat{position:relative;display:block;aspect-ratio:1;max-width:100%;overflow:hidden;text-decoration:none;color:var(--white);background:var(--ink)}
 .cat img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
-.cat::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(11,11,10,.92))}
-.cat:hover img{transform:scale(1.07)}
+.cat::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,10,9,.9))}
+.cat:hover img{transform:scale(1.06)}
 .cat .lbl{position:absolute;left:12px;right:12px;bottom:10px;z-index:1;display:flex;justify-content:space-between;align-items:end;gap:8px}
-.cat b{font-family:var(--wide);font-weight:700;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;line-height:1.2}
-.cat small{font-family:var(--mono);font-size:.68rem;color:var(--lime);white-space:nowrap}
-.cat.txt{display:flex;align-items:center;justify-content:center;border:1.5px dashed var(--line);text-align:center;padding:14px}
-.cat.txt::after{display:none}
-.cat.txt b{font-size:.8rem}
+.cat b{font-family:var(--head);font-weight:500;font-size:1rem;letter-spacing:.06em;text-transform:uppercase;line-height:1.2}
+.cat small{font-size:.85rem;color:var(--lime);white-space:nowrap}
 @media (max-width:900px){.cats{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:560px){.cats{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.favs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 56px;border-top:1px solid var(--line);margin-bottom:56px}
-@media (max-width:760px){.favs{grid-template-columns:1fr}}
-.sushi-photo{border-radius:10px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.6);background:#fff;max-width:100%}
+.light .more{margin-top:28px;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;color:#55534c}
+
+/* sushi */
+.sushi .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:center}
+.sushi-photo{max-width:100%;background:#fff}
 .sushi-photo img{display:block;width:100%;height:auto}
-/* friday band */
-.friday{border-block:1px solid var(--line);background:linear-gradient(90deg,rgba(227,38,43,.16),transparent 60%)}
-.friday .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;padding-block:28px}
-.friday h3{font-family:var(--wide);font-weight:800;font-size:clamp(1.1rem,2.6vw,1.6rem);text-transform:uppercase}
-.friday h3 em{font-family:var(--chic);font-weight:500;text-transform:none;color:var(--lime)}
-.friday p{margin:4px 0 0;color:var(--muted)}
+.sushi p{color:var(--soft);max-width:46ch}
+@media (max-width:860px){.sushi .wrap{grid-template-columns:1fr}}
 
 /* gallery */
 .gal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:clamp(140px,18vw,220px);gap:12px}
-.ph{position:relative;border-radius:8px;overflow:hidden;display:flex;align-items:end;padding:14px;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--white);background:var(--coal)}
+.ph{position:relative;overflow:hidden;display:flex;align-items:end;padding:14px;font-family:var(--head);font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white);background:var(--coal)}
 .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(11,11,10,.85))}
+.ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(10,10,9,.85))}
 .ph span{position:relative;z-index:1}
 .ph:nth-child(1){grid-column:span 2;grid-row:span 2}
 .ph:nth-child(4){grid-column:span 2}
-@media (max-width:700px){.gal{grid-template-columns:repeat(2,minmax(0,1fr))}.ph:nth-child(4){grid-column:span 2}}
+@media (max-width:700px){.gal{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
-/* instagram */
-.insta{background:var(--red);color:var(--white)}
-.insta .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:22px;padding-block:clamp(36px,6vw,60px)}
-.insta h2{font-size:clamp(1.6rem,4vw,2.8rem)}
-.insta h2 em{color:var(--black)}
-.insta .btn{background:var(--black);color:var(--white)}
+/* reserve */
+.reserve{background:var(--coal);border-block:1px solid var(--line)}
+.reserve .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,80px)}
+.reserve .side p{color:var(--soft)}
+.reserve .side .big{font-family:var(--head);font-size:1.5rem;letter-spacing:.04em;color:var(--white);margin:4px 0 0}
+form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.f{display:grid;gap:6px;min-width:0}
+.f.full{grid-column:1/-1}
+.f label{font-family:var(--head);font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.f input,.f select,.f textarea{width:100%;font:inherit;font-size:1rem;color:var(--white);background:var(--black);border:1px solid var(--line);border-radius:2px;padding:12px 14px}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--lime)}
+.f textarea{min-height:90px;resize:vertical}
+form .btn{grid-column:1/-1;justify-self:start}
+.msg{grid-column:1/-1;margin:0;padding:14px 16px;border:1px solid var(--line);font-size:1rem}
+.msg.ok{border-color:var(--lime);color:var(--white)}
+.msg.err{border-color:var(--red);color:var(--white)}
+.hp{position:absolute;left:-9999px}
+@media (max-width:860px){.reserve .wrap{grid-template-columns:1fr}}
+@media (max-width:520px){form{grid-template-columns:1fr}}
 
 /* visit */
 .visit .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,64px)}
-.map{position:relative;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--coal)}
+.map{position:relative;overflow:hidden;border:1px solid var(--line);background:var(--coal)}
 .map svg{display:block;width:100%;height:auto}
 .map .bar{display:flex;flex-wrap:wrap;gap:8px;padding:14px;border-top:1px solid var(--line)}
-.map .bar .btn{padding:11px 16px;font-size:.66rem}
-.map .addr{position:absolute;left:14px;top:14px;background:rgba(11,11,10,.88);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font-size:.88rem;line-height:1.35}
-.map .addr strong{display:block;font-family:var(--wide);font-size:.72rem;letter-spacing:.08em;color:var(--lime)}
-.pin{transform-origin:50% 100%;animation:drop 3.2s ease-in-out infinite}
-@keyframes drop{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.map .bar .btn{min-width:0;padding:11px 16px;font-size:.8rem}
+.map .addr{position:absolute;left:14px;top:14px;background:rgba(10,10,9,.9);border:1px solid var(--line);padding:10px 14px;font-size:.95rem;line-height:1.4}
+.map .addr strong{display:block;font-family:var(--head);font-weight:500;letter-spacing:.1em;color:var(--lime)}
 .contact{display:grid;gap:20px;align-content:start}
-.k{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);margin-bottom:2px}
-.v{font-family:var(--chic);font-style:italic;font-size:1.45rem;line-height:1.25;word-break:break-word}
-.copy{background:none;border:1px solid var(--line);color:var(--muted);font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px;cursor:pointer;margin-left:8px;vertical-align:.3em}
+.k{font-family:var(--head);font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);margin-bottom:2px}
+.v{font-family:var(--head);font-size:1.35rem;line-height:1.3;word-break:break-word}
+.copy{background:none;border:1px solid var(--line);color:var(--soft);font-family:var(--head);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;cursor:pointer;margin-left:8px;vertical-align:.2em}
 .copy:hover{color:var(--white);border-color:var(--white)}
-.hours{border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-top:6px}
-.row{display:grid;grid-template-columns:7rem 1fr;padding:10px 14px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.85rem;font-variant-numeric:tabular-nums}
+.hours{border:1px solid var(--line);margin-top:6px}
+.row{display:grid;grid-template-columns:7.5rem 1fr;padding:10px 14px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
 .row:last-child{border-bottom:0}
-.row .d{color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;align-self:center}
+.row .d{color:var(--soft);font-family:var(--head);text-transform:uppercase;letter-spacing:.1em;font-size:.85rem;align-self:center}
 .row.today{background:rgba(140,198,63,.12)}
 .row.today .d{color:var(--lime)}
-.closed{color:var(--red)}
+.closed{color:#ff6b6b}
 @media (max-width:900px){.visit .grid{grid-template-columns:1fr}}
 
-/* order band */
-.order{background:var(--lime);color:var(--black)}
-.order .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;padding-block:clamp(48px,8vw,90px)}
-.order h2{font-size:clamp(2.4rem,7vw,5.2rem)}
-.order h2 em{color:var(--red)}
-.order p{margin:10px 0 0;max-width:40ch}
-.order .btn{background:var(--black);color:var(--white);font-size:.9rem;padding:18px 30px}
+/* instagram + friday (lower page) */
+.insta .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:22px;padding-block:clamp(40px,6vw,64px)}
+.insta h2{font-size:clamp(1.6rem,3.6vw,2.4rem)}
+.friday{border-top:1px solid var(--line)}
+.friday .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;padding-block:32px}
+.friday h3{font-size:1.4rem;letter-spacing:.04em}
+.friday p{margin:4px 0 0;color:var(--soft)}
 
-footer{padding-block:36px}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;color:var(--muted);font-size:.85rem}
-footer img{height:26px;width:auto}
+/* closing */
+.closing{text-align:center}
+.closing .wrap{display:grid;gap:28px;justify-items:center;padding-block:clamp(64px,10vw,110px);border-top:1px solid var(--line)}
+footer{padding-block:32px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;color:var(--soft);font-size:.95rem}
+footer .mark{width:110px}
 
 .dock{display:none}
 @media (max-width:760px){
-  .dock{display:flex;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:30}
-  .dock .btn{flex:1;justify-content:center;box-shadow:0 12px 30px rgba(0,0,0,.6)}
+  .dock{display:flex;gap:8px;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:30}
+  .dock .btn{flex:1;min-width:0;padding:14px 10px;font-size:.85rem;box-shadow:0 12px 30px rgba(0,0,0,.6)}
+  .dock .btn-line{background:var(--black)}
   footer{padding-bottom:100px}
 }
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="chops" viewBox="0 0 651 90"><path d="M117 10H35Q7 10 7 38V52Q7 80 35 80H117"/><path d="M137 10V80M227 10V80M137 45H227"/><rect x="247" y="10" width="130" height="70" rx="35"/><path d="M397 80V10H470Q497 10 497 27.5Q497 45 470 45H397"/><path d="M637 10H544Q517 10 517 27.5Q517 45 544 45H610Q637 45 637 62.5Q637 80 610 80H517"/></symbol>
+</svg>
+
 <header class="nav">
   <div class="wrap">
-    <a href="#top" aria-label="Chops home"><img src="wordmark.png" alt="Chops"></a>
+    <a class="home" href="#top" aria-label="Chops home"><svg class="mark" viewBox="0 0 651 90"><use href="#chops"/></svg></a>
     <nav class="links">
-      <a class="t" href="#sushi" data-fr="Sushi">Sushi</a>
-      <a class="t" href="#menu" data-fr="Menu">Menu</a>
-      <a class="t" href="#gallery" data-fr="Galerie">Gallery</a>
+      <a class="t" href="#menu">Menu</a>
+      <a class="t" href="#sushi">Sushi</a>
+      <a class="t" href="#events" data-fr="Événements">Events</a>
+      <a class="t" href="#reserve" data-fr="Réserver">Reserve</a>
       <a class="t" href="#visit" data-fr="Nous trouver">Find us</a>
       <div class="lang" role="group" aria-label="Language">
         <button type="button" id="lang-en" aria-pressed="true">EN</button>
         <button type="button" id="lang-fr" aria-pressed="false">FR</button>
       </div>
+      <a class="btn btn-line" href="#reserve" data-fr="Réserver">Reserve</a>
       <a class="btn btn-lime" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener" data-fr="Commander">Order</a>
     </nav>
   </div>
 </header>
 
 <main id="top">
-  <section class="hero">
-    <div class="wrap">
-      <div class="logo-stage"><img src="wordmark.png" alt="Chops"><span class="tl" data-fr="Steakhouse de fusion asiatique cachère <b>+</b> bar à sushi">Kosher Asian fusion steakhouse <b>+</b> sushi bar</span></div>
-      <div>
-                <h1 data-fr="Des grillades, des sushis et <b>beaucoup</b> d'amour.">Steaks, sushi and a whole lot of <b>love</b>.</h1>
-        <p class="lede" data-fr="Un steakhouse de fusion asiatique avec bar à sushi : des saveurs d'Asie et d'Amérique du Nord, entièrement cachères. Sur Queen Mary, à Montréal.">An Asian-fusion steakhouse with a sushi bar: flavours from Asia and North America, fully kosher. On Queen Mary in Montréal.</p>
-        <div class="cta">
-          <a class="btn btn-lime" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener"><span data-fr="Commander / Order">Order / Commander</span> <span class="arr">→</span></a>
-          <a class="btn btn-line" href="#menu" data-fr="Voir le menu">See the menu</a>
+  <section class="hero" id="hero" data-style="photo">
+    <div class="chooser" role="group" aria-label="Choose a top-of-page style (preview only)">
+      <span>Preview · top style</span>
+      <button type="button" data-s="photo" aria-pressed="true">1 Photo</button>
+      <button type="button" data-s="minimal" aria-pressed="false">2 Minimal</button>
+      <button type="button" data-s="split" aria-pressed="false">3 Split</button>
+    </div>
+
+    <div class="v v-photo">
+      <div class="bg" aria-hidden="true"></div>
+      <div class="wrap">
+        <div class="brand">
+          <svg class="mark" viewBox="0 0 651 90" role="img" aria-label="Chops"><use href="#chops"/></svg>
+          <div class="tagline" data-fr="Steakhouse de fusion asiatique cachère <b>+</b> bar à sushi">Kosher Asian fusion steakhouse <b>+</b> sushi bar</div>
         </div>
-        <div class="chips">
-          <span class="chip" id="status">Hours</span>
-          <span class="chip" data-fr="Cachère">Kosher</span>
-          <span class="chip" data-fr="Pour emporter et livraison">Pickup &amp; delivery</span>
+        <div class="pair">
+          <a class="btn btn-lime" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener" data-fr="Commander en ligne">Order online</a>
+          <a class="btn btn-line" href="#reserve" data-fr="Réserver une table">Reserve a table</a>
         </div>
+        <span class="status js-status"><i></i><span>Hours</span></span>
+      </div>
+    </div>
+
+    <div class="v v-minimal">
+      <div class="wrap">
+        <div class="brand">
+          <svg class="mark" viewBox="0 0 651 90" role="img" aria-label="Chops"><use href="#chops"/></svg>
+          <div class="tagline" data-fr="Steakhouse de fusion asiatique cachère <b>+</b> bar à sushi">Kosher Asian fusion steakhouse <b>+</b> sushi bar</div>
+        </div>
+        <div class="rule"></div>
+        <p data-fr="Des saveurs d'Asie et d'Amérique du Nord, entièrement cachères. 5322, chemin Queen-Mary, Montréal.">Flavours from Asia and North America, fully kosher. 5322 Queen Mary Road, Montréal.</p>
+        <div class="pair">
+          <a class="btn btn-lime" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener" data-fr="Commander en ligne">Order online</a>
+          <a class="btn btn-line" href="#reserve" data-fr="Réserver une table">Reserve a table</a>
+        </div>
+        <span class="status js-status"><i></i><span>Hours</span></span>
+      </div>
+    </div>
+
+    <div class="v v-split">
+      <div class="wrap">
+        <div style="display:grid;gap:28px">
+          <div class="brand">
+            <svg class="mark" viewBox="0 0 651 90" role="img" aria-label="Chops"><use href="#chops"/></svg>
+            <div class="tagline" data-fr="Steakhouse de fusion asiatique cachère <b>+</b> bar à sushi">Kosher Asian fusion steakhouse <b>+</b> sushi bar</div>
+          </div>
+          <p data-fr="Des saveurs d'Asie et d'Amérique du Nord, entièrement cachères. Sur Queen Mary, à Montréal.">Flavours from Asia and North America, fully kosher. On Queen Mary in Montréal.</p>
+          <div class="pair">
+            <a class="btn btn-lime" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener" data-fr="Commander en ligne">Order online</a>
+            <a class="btn btn-line" href="#reserve" data-fr="Réserver une table">Reserve a table</a>
+          </div>
+          <span class="status js-status"><i></i><span>Hours</span></span>
+        </div>
+        <div class="frame"><img src="food/grill.jpg" alt="Sliced grilled steak with vegetables"></div>
       </div>
     </div>
   </section>
 
-  <div class="ticker" aria-hidden="true">
-    <div class="track">
-      <span>General Tao beef</span><span>Sushi bar</span><span>Crispy cauliflower</span><span>Beef carpaccio</span><span>Peanut butter dumplings</span><span>From the grill</span><span>Ginger chicken</span>
-      <span>General Tao beef</span><span>Sushi bar</span><span>Crispy cauliflower</span><span>Beef carpaccio</span><span>Peanut butter dumplings</span><span>From the grill</span><span>Ginger chicken</span>
-    </div>
-  </div>
-
-  <section class="friday">
+  <section class="sec light" id="menu">
     <div class="wrap">
-      <div>
-        <h3 data-fr="Le vendredi chez <em>Chops</em>">Friday at <em>Chops</em></h3>
-        <p data-fr="Dîner et commandes pour Shabbat à emporter, de midi à 16 h.">Lunch and Shabbat takeout, 12 pm to 4 pm. Pick up your favourites for the family.</p>
+      <div class="head">
+        <div>
+          <p class="label" data-fr="Le menu">The menu</p>
+          <h2 data-fr="Nos favoris">House favourites</h2>
+        </div>
+        <p data-fr="Plus de cent plats, de la soupe wonton au steak.">Over a hundred dishes, from wonton soup to steak.</p>
       </div>
-      <a class="btn btn-lime" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener"><span data-fr="Commander pour Shabbat">Order for Shabbat</span> <span class="arr">→</span></a>
+      <div class="favs">
+        <div class="dish"><h3>General Tao beef<span class="tag">Favourite</span></h3><span class="price"></span><p>Crispy slices of beef with vegetables and rice in General Tao sauce.</p></div>
+        <div class="dish"><h3>Beef carpaccio</h3><span class="price"></span><p>Thin-sliced beef with greens and toast points.</p></div>
+        <div class="dish"><h3>Crispy cauliflower</h3><span class="price"></span><p>Golden fried florets with a sweet chili dip.</p></div>
+        <div class="dish"><h3>Peanut butter dumplings<span class="tag">Signature</span></h3><span class="price"></span><p>Nutty and saucy. The one everyone orders twice.</p></div>
+        <div class="dish"><h3>Ginger chicken</h3><span class="price">$40</span><p>Fresh ginger, scallion and a glossy wok sauce.</p></div>
+        <div class="dish"><h3>From the grill</h3><span class="price"></span><p>Eighteen steaks and grill plates, sliced and served hot.</p></div>
+      </div>
+      <p class="label" data-fr="Tout le menu · touchez pour commander">Full menu · tap to order</p>
+      <div class="cats">
+        <a class="cat" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener"><img src="food/appetizers.jpg" alt="" loading="lazy"><span class="lbl"><b data-fr="Entrées">Appetizers</b><small>26</small></span></a>
+        <a class="cat" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener"><img src="food/soups.jpg" alt="" loading="lazy"><span class="lbl"><b data-fr="Soupes">Soups</b><small>6</small></span></a>
+        <a class="cat" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener"><img src="food/salads.jpg" alt="" loading="lazy"><span class="lbl"><b data-fr="Salades">Salads</b><small>10</small></span></a>
+        <a class="cat" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener"><img src="food/asian.jpg" alt="" loading="lazy"><span class="lbl"><b data-fr="Plats asiatiques">Asian mains</b><small>33</small></span></a>
+        <a class="cat" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener"><img src="food/grill.jpg" alt="" loading="lazy"><span class="lbl"><b data-fr="Grillades">From the grill</b><small>18</small></span></a>
+        <a class="cat" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener"><img src="food/sushi.jpg" alt="" loading="lazy"><span class="lbl"><b>Sushi</b></span></a>
+        <a class="cat" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener"><img src="food/burgers.jpg" alt="" loading="lazy"><span class="lbl"><b>Burgers</b><small>2</small></span></a>
+        <a class="cat" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener"><img src="food/pasta.jpg" alt="" loading="lazy"><span class="lbl"><b data-fr="Pâtes">Pasta</b><small>3</small></span></a>
+        <a class="cat" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener"><img src="food/sides.jpg" alt="" loading="lazy"><span class="lbl"><b data-fr="Accompagnements">Sides</b><small>12</small></span></a>
+        <a class="cat" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener"><img src="food/dessert.jpg" alt="" loading="lazy"><span class="lbl"><b>Desserts</b></span></a>
+      </div>
+      <div class="more">
+        <span class="amex" data-fr="Prix en dollars canadiens. Sous surveillance cachère. AMEX n'est pas accepté pour le paiement en ligne.">Prices in CAD. Under kosher supervision. AMEX is not accepted for online payment.</span>
+        <a class="btn btn-dark" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener" data-fr="Voir tout le menu">See the full menu</a>
+      </div>
     </div>
   </section>
 
@@ -269,81 +348,86 @@ footer img{height:26px;width:auto}
     <div class="wrap">
       <div class="sushi-photo"><img src="food/sushi.jpg" alt="A Chops sushi roll topped with salmon, sauce and microgreens"></div>
       <div>
-        <p class="eyebrow" data-fr="Le bar à sushi">The sushi bar</p>
-        <h2 data-fr="Roulé <em>à la main</em>, cachère">Rolled <em>by hand</em>, kosher</h2>
-        <p class="body" data-fr="Prenez place au comptoir et regardez nos chefs travailler. Poisson frais, riz assaisonné et nos rouleaux signature, sous surveillance cachère.">Grab a seat at the counter and watch the chefs work. Fresh fish, seasoned rice and our signature rolls, all under kosher supervision.</p>
-        <a class="btn btn-line" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener" style="margin-top:10px"><span data-fr="Commander des sushis">Order sushi</span> <span class="arr">→</span></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="menu">
-    <div class="wrap">
-      <div class="head">
-        <div>
-          <p class="eyebrow" data-fr="Le menu">The menu</p>
-          <h2 data-fr="Petites assiettes, <em>grand</em> appétit">Small plates, <em>big</em> appetite</h2>
-        </div>
-        <p data-fr="Plus de cent plats, de la soupe wonton au steak. Voici nos favoris.">Over a hundred dishes, from wonton soup to steak. Start with the favourites.</p>
-      </div>
-      <div class="favs">
-        <div class="dish"><h3>General Tao beef<span class="tag">Fan fave</span></h3><span class="price"></span><p>Crispy slices of beef with vegetables and rice in General Tao sauce.</p></div>
-        <div class="dish"><h3>Beef carpaccio</h3><span class="price"></span><p>Paper-thin beef, greens and toast points.</p></div>
-        <div class="dish"><h3>Crispy cauliflower</h3><span class="price"></span><p>Golden fried florets with a sweet chili dip.</p></div>
-        <div class="dish"><h3>Peanut butter dumplings<span class="tag">Signature</span></h3><span class="price"></span><p>Nutty, saucy, a little sticky. The one everyone orders twice.</p></div>
-        <div class="dish"><h3>Ginger chicken</h3><span class="price">$40</span><p>Fresh ginger, scallion and a glossy wok sauce.</p></div>
-        <div class="dish"><h3>From the grill</h3><span class="price"></span><p>Eighteen cuts and grill plates, sliced and served hot.</p></div>
-      </div>
-      <p class="eyebrow" data-fr="Tout le menu · touchez pour commander">The full menu · tap to order</p>
-      <div class="cats">
-        <a class="cat" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener"><img src="food/appetizers.jpg" alt="" loading="lazy"><span class="lbl"><b data-fr="Entrées">Appetizers</b><small>26</small></span></a>
-        <a class="cat" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener"><img src="food/soups.jpg" alt="" loading="lazy"><span class="lbl"><b data-fr="Soupes">Soups</b><small>6</small></span></a>
-        <a class="cat" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener"><img src="food/salads.jpg" alt="" loading="lazy"><span class="lbl"><b data-fr="Salades">Salads</b><small>10</small></span></a>
-        <a class="cat" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener"><img src="food/asian.jpg" alt="" loading="lazy"><span class="lbl"><b data-fr="Plats asiatiques">Asian mains</b><small>33</small></span></a>
-        <a class="cat" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener"><img src="food/grill.jpg" alt="" loading="lazy"><span class="lbl"><b data-fr="Grillades">From the grill</b><small>18</small></span></a>
-        <a class="cat" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener"><img src="food/sushi.jpg" alt="" loading="lazy"><span class="lbl"><b data-fr="Sushi">Sushi</b></span></a>
-        <a class="cat" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener"><img src="food/burgers.jpg" alt="" loading="lazy"><span class="lbl"><b data-fr="Burgers">Burgers</b><small>2</small></span></a>
-        <a class="cat" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener"><img src="food/pasta.jpg" alt="" loading="lazy"><span class="lbl"><b data-fr="Pâtes">Pasta</b><small>3</small></span></a>
-        <a class="cat" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener"><img src="food/sides.jpg" alt="" loading="lazy"><span class="lbl"><b data-fr="Accompagnements">Sides</b><small>12</small></span></a>
-        <a class="cat" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener"><img src="food/dessert.jpg" alt="" loading="lazy"><span class="lbl"><b data-fr="Desserts">Desserts</b></span></a>
+        <p class="label" data-fr="Le bar à sushi">The sushi bar</p>
+        <h2 data-fr="Roulé à la main, cachère">Rolled by hand, kosher</h2>
+        <p data-fr="Prenez place au comptoir et regardez nos chefs travailler. Poisson frais, riz assaisonné et nos rouleaux signature, sous surveillance cachère.">Take a seat at the counter and watch the chefs work. Fresh fish, seasoned rice and our signature rolls, all under kosher supervision.</p>
+        <a class="btn btn-line" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener" style="margin-top:12px" data-fr="Commander des sushis">Order sushi</a>
       </div>
     </div>
   </section>
 
   <section class="sec" id="gallery" style="padding-top:0">
     <div class="wrap">
-      <div class="head">
-        <div>
-          <p class="eyebrow" data-fr="Galerie">Gallery</p>
-          <h2 data-fr="Venez <em>voir</em>">Come <em>see</em></h2>
-        </div>
-      </div>
+      <div class="head"><div><p class="label" data-fr="Galerie">Gallery</p><h2 data-fr="À la table">At the table</h2></div></div>
       <div class="gal">
-        <div class="ph"><img src="food/grill.jpg" alt="Sliced grilled steak" loading="lazy"><span>From the grill</span></div>
-        <div class="ph"><img src="food/asian.jpg" alt="Stir-fried noodles" loading="lazy"><span>Noodles</span></div>
-        <div class="ph"><img src="food/dessert.jpg" alt="Chocolate lava cake" loading="lazy"><span>Lava cake</span></div>
-        <div class="ph"><img src="food/appetizers.jpg" alt="Crispy glazed appetizer" loading="lazy"><span>Appetizers</span></div>
+        <div class="ph"><img src="food/grill.jpg" alt="Sliced grilled steak" loading="lazy"><span data-fr="Grillades">From the grill</span></div>
+        <div class="ph"><img src="food/asian.jpg" alt="Stir-fried noodles" loading="lazy"><span data-fr="Nouilles">Noodles</span></div>
+        <div class="ph"><img src="food/dessert.jpg" alt="Chocolate lava cake" loading="lazy"><span data-fr="Gâteau fondant">Lava cake</span></div>
+        <div class="ph"><img src="food/appetizers.jpg" alt="Crispy glazed appetizer" loading="lazy"><span data-fr="Entrées">Appetizers</span></div>
         <div class="ph"><img src="food/burgers.jpg" alt="Burger and fries" loading="lazy"><span>Burger</span></div>
-        <div class="ph"><img src="food/soups.jpg" alt="Wonton soup" loading="lazy"><span>Wonton soup</span></div>
+        <div class="ph"><img src="food/soups.jpg" alt="Wonton soup" loading="lazy"><span data-fr="Soupe wonton">Wonton soup</span></div>
       </div>
     </div>
   </section>
 
-  <section class="insta">
+  <section class="sec events" id="events" style="padding-top:0">
     <div class="wrap">
-      <h2 data-fr="Suivez-nous sur <em>Instagram</em>">Follow the <em>love</em> on Instagram</h2>
-      <a class="btn" href="https://www.instagram.com/chops2020restobar/" target="_blank" rel="noopener">@chops2020restobar <span class="arr">→</span></a>
+      <div class="intro">
+        <div>
+          <p class="label" data-fr="Événements privés">Private events</p>
+          <h2 data-fr="Célébrez chez Chops">Celebrate at Chops</h2>
+        </div>
+        <p data-fr="Réunions d'affaires, rassemblements et célébrations deviennent des événements inoubliables.">Business meetings, gatherings and celebrations become unforgettable events. We take pride in delivering great food and service for a lasting impression.</p>
+      </div>
+      <div class="room">
+        <div class="cap">12<small data-fr="invités">guests</small></div>
+        <h3 data-fr="Le salon VIP">The VIP Room</h3>
+        <p data-fr="Une salle à manger privée, élégante et distinguée, pour une occasion spéciale ou une réunion d'affaires.">An elegant private dining room for a special occasion or your next corporate dinner.</p>
+        <ul><li data-fr="Anniversaires">Birthdays</li><li data-fr="Repas d'affaires">Business dinners</li><li data-fr="Petits groupes">Small groups</li></ul>
+      </div>
+      <div class="room">
+        <div class="cap">100+<small data-fr="invités">guests</small></div>
+        <h3>CHOPS Privé</h3>
+        <p data-fr="Notre salle de réception pour vos simchas : service aux tables, style familial ou traiteur.">Our catering hall for your next simcha, with table service, family-style or home-style catering.</p>
+        <ul><li data-fr="Fiançailles">Engagements</li><li>Hennas</li><li data-fr="Fêtes d'anniversaire">Birthday parties</li><li data-fr="Traiteur">Catering</li></ul>
+      </div>
+      <div class="cta">
+        <span data-fr="Pour planifier votre événement, appelez le (514) 759-4677.">To plan your event, call (514) 759-4677.</span>
+        <a class="btn btn-line" href="#visit" data-fr="Nous joindre">Contact us</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec reserve" id="reserve">
+    <div class="wrap">
+      <div class="side">
+        <p class="label" data-fr="Réservations">Reservations</p>
+        <h2 data-fr="Réserver une table">Reserve a table</h2>
+        <p data-fr="Envoyez une demande et nous vous texterons pour confirmer. Pour ce soir ou un groupe de plus de 10, appelez-nous. Groupe plus grand? Voyez nos événements privés.">Send a request and we'll text you to confirm. For tonight, or a group of more than 10, please call. Bigger party? See private events above.</p>
+        <div class="k" style="margin-top:22px" data-fr="Appelez">Call</div>
+        <p class="big">(514) 759-4677</p>
+        <div class="k" style="margin-top:14px" data-fr="Appel ou texto">Call or text</div>
+        <p class="big">(514) 754-5322</p>
+      </div>
+      <form id="resv" name="reservation" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="reservation">
+        <p class="hp"><label>Leave empty <input name="bot-field" id="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <div class="f"><label for="r-name" data-fr="Nom">Name</label><input id="r-name" name="name" autocomplete="name" required></div>
+        <div class="f"><label for="r-phone" data-fr="Téléphone">Phone</label><input id="r-phone" name="phone" type="tel" autocomplete="tel" required></div>
+        <div class="f"><label for="r-date">Date</label><input id="r-date" name="date" type="date" required></div>
+        <div class="f"><label for="r-time" data-fr="Heure">Time</label><select id="r-time" name="time" required></select></div>
+        <div class="f"><label for="r-size" data-fr="Personnes">Guests</label><select id="r-size" name="guests" required></select></div>
+        <div class="f"><label for="r-occ" data-fr="Occasion">Occasion</label><select id="r-occ" name="occasion"><option value="">None</option><option>Birthday</option><option>Anniversary</option><option>Business</option><option>Other</option></select></div>
+        <div class="f full"><label for="r-notes" data-fr="Notes">Notes</label><textarea id="r-notes" name="notes" placeholder="High chair, allergies, seating preference…"></textarea></div>
+        <button class="btn btn-lime" type="submit" data-fr="Envoyer la demande">Send request</button>
+        <p class="msg" id="r-msg" hidden></p>
+      </form>
     </div>
   </section>
 
   <section class="sec visit" id="visit">
     <div class="wrap">
-      <div class="head">
-        <div>
-          <p class="eyebrow" data-fr="Nous trouver">Find us</p>
-          <h2 data-fr="Sur <em>Queen Mary</em>">On <em>Queen Mary</em></h2>
-        </div>
-      </div>
+      <div class="head"><div><p class="label" data-fr="Nous trouver">Find us</p><h2 data-fr="Sur Queen Mary">On Queen Mary</h2></div></div>
       <div class="grid">
         <div class="map">
           <svg viewBox="0 0 640 400" role="img" aria-label="Map showing Chops at 5322 Queen Mary Road">
@@ -351,22 +435,17 @@ footer img{height:26px;width:auto}
             <g stroke="#1f1f1c" stroke-width="10" fill="none">
               <path d="M0 60 L640 160"/><path d="M0 330 L640 400"/><path d="M90 0 L40 400"/><path d="M200 0 L160 400"/><path d="M470 0 L440 400"/><path d="M580 0 L560 400"/><path d="M0 120 L640 210"/>
             </g>
-            <g stroke="#2a2a26" stroke-width="2" fill="none">
-              <path d="M0 20 L640 110"/><path d="M0 380 L640 470"/><path d="M140 0 L100 400"/><path d="M520 0 L500 400"/>
-            </g>
-            <rect x="380" y="20" width="70" height="60" rx="6" fill="rgba(140,198,63,.10)"/>
-            <rect x="60" y="300" width="90" height="70" rx="6" fill="rgba(140,198,63,.10)"/>
             <path d="M-20 300 C 160 250, 420 200, 660 130" stroke="#2f2f2a" stroke-width="22" fill="none"/>
-            <path d="M-20 300 C 160 250, 420 200, 660 130" stroke="#8cc63f" stroke-width="3" fill="none" stroke-dasharray="1 0"/>
+            <path d="M-20 300 C 160 250, 420 200, 660 130" stroke="#8cc63f" stroke-width="3" fill="none"/>
             <path d="M345 -10 L320 410" stroke="#2f2f2a" stroke-width="30"/>
-            <path d="M345 -10 L320 410" stroke="#f5f0e4" stroke-opacity=".35" stroke-width="2" stroke-dasharray="10 8"/>
-            <text x="470" y="150" fill="#8cc63f" font-family="DM Mono, monospace" font-size="13" letter-spacing="2" transform="rotate(-14 470 150)">QUEEN MARY RD</text>
-            <text x="352" y="380" fill="#a9a596" font-family="DM Mono, monospace" font-size="12" letter-spacing="2" transform="rotate(-86 352 380)">DÉCARIE</text>
-            <g class="pin">
-              <ellipse cx="268" cy="236" rx="16" ry="5" fill="rgba(0,0,0,.6)"/>
-              <path d="M268 234 C 230 200, 236 168, 256 168 C 263 168, 268 174, 268 178 C 268 174, 273 168, 280 168 C 300 168, 306 200, 268 234 Z" fill="#e3262b"/>
-            </g>
-            <text x="620" y="388" text-anchor="end" fill="#6d6a60" font-family="DM Mono, monospace" font-size="10">Illustration, not to scale</text>
+            <path d="M345 -10 L320 410" stroke="#f7f5f0" stroke-opacity=".35" stroke-width="2" stroke-dasharray="10 8"/>
+            <text x="470" y="150" fill="#8cc63f" font-family="Jost, sans-serif" font-size="14" letter-spacing="2" transform="rotate(-14 470 150)">QUEEN MARY RD</text>
+            <text x="352" y="380" fill="#cfcbc0" font-family="Jost, sans-serif" font-size="13" letter-spacing="2" transform="rotate(-86 352 380)">DÉCARIE</text>
+            <ellipse cx="262" cy="300" rx="14" ry="4" fill="rgba(0,0,0,.6)"/>
+            <path d="M262 300 C 262 300, 240 272, 240 258 A 22 22 0 0 1 284 258 C 284 272, 262 300, 262 300 Z" fill="#8cc63f"/>
+            <circle cx="262" cy="258" r="8" fill="#0a0a09"/>
+            <text x="186" y="40" fill="#cfcbc0" font-family="Jost, sans-serif" font-size="13" letter-spacing="2" transform="rotate(-84 186 40)" text-anchor="end">COOLBROOK</text>
+            <text x="620" y="388" text-anchor="end" fill="#6d6a60" font-family="Manrope, sans-serif" font-size="11">Illustration, not to scale</text>
           </svg>
           <div class="addr"><strong>CHOPS RESTO-BAR</strong>5322 Queen Mary Rd<br>Montréal, QC H3X 1T7</div>
           <div class="bar">
@@ -378,61 +457,125 @@ footer img{height:26px;width:auto}
         <div class="contact">
           <div><div class="k" data-fr="Appelez">Call</div><div class="v"><span id="p1">(514) 759-4677</span><button class="copy" type="button" data-copy="p1">Copy</button></div></div>
           <div><div class="k" data-fr="Appel ou texto">Call or text</div><div class="v"><span id="p2">(514) 754-5322</span><button class="copy" type="button" data-copy="p2">Copy</button></div></div>
-          <div><div class="k">Email</div><div class="v" style="font-size:1.15rem"><span id="em">chops2020restobar@gmail.com</span><button class="copy" type="button" data-copy="em">Copy</button></div></div>
+          <div><div class="k">Email</div><div class="v" style="font-size:1.1rem"><span id="em">chops2020restobar@gmail.com</span><button class="copy" type="button" data-copy="em">Copy</button></div></div>
           <div><div class="k" data-fr="Heures">Hours</div><div class="hours" id="hours"></div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="order">
+  <section class="insta">
+    <div class="wrap" style="border-top:1px solid var(--line)">
+      <div>
+        <p class="label">Instagram</p>
+        <h2 data-fr="Suivez-nous">Follow along</h2>
+      </div>
+      <a class="btn btn-line" href="https://www.instagram.com/chops2020restobar/" target="_blank" rel="noopener">@chops2020restobar</a>
+    </div>
+  </section>
+
+  <section class="friday">
     <div class="wrap">
       <div>
-        <h2 data-fr="Une <em>fringale?</em>">Hungry <em>now?</em></h2>
-        <p data-fr="Commandez directement de notre cuisine, pour emporter ou en livraison.">Order straight from our kitchen for pickup or delivery.</p>
+        <h3 data-fr="Le vendredi : dîner et commandes pour Shabbat">Fridays: lunch and Shabbat takeout</h3>
+        <p data-fr="De midi à 16 h. Passez prendre vos plats préférés pour la famille.">12 pm to 4 pm. Pick up your favourites for the family.</p>
       </div>
-      <a class="btn" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener"><span data-fr="Commander">Order online</span> <span class="arr">→</span></a>
+      <a class="btn btn-line" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener" data-fr="Commander">Order</a>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap">
+      <div class="brand">
+        <svg class="mark" viewBox="0 0 651 90" role="img" aria-label="Chops" style="width:min(360px,70vw)"><use href="#chops"/></svg>
+        <div class="tagline" data-fr="Steakhouse de fusion asiatique cachère <b>+</b> bar à sushi">Kosher Asian fusion steakhouse <b>+</b> sushi bar</div>
+      </div>
+      <p class="slogan" data-fr="Aimez la vie, vivez bien et mangez cachère.">Love life, live well and eat kosher.</p>
+      <div class="pair">
+        <a class="btn btn-lime" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener" data-fr="Commander en ligne">Order online</a>
+        <a class="btn btn-line" href="#reserve" data-fr="Réserver une table">Reserve a table</a>
+      </div>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <img src="wordmark.png" alt="Chops">
+    <svg class="mark" viewBox="0 0 651 90" role="img" aria-label="Chops"><use href="#chops"/></svg>
     <span>5322 Queen Mary Rd, Montréal · (514) 759-4677 · chops2020restobar@gmail.com</span>
   </div>
 </footer>
 
-<div class="dock"><a class="btn btn-lime" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener"><span data-fr="Commander">Order online</span> <span class="arr">→</span></a></div>
+<div class="dock">
+  <a class="btn btn-lime" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener" data-fr="Commander">Order</a>
+  <a class="btn btn-line" href="#reserve" data-fr="Réserver">Reserve</a>
+</div>
 
 <script>
 (function(){
   var lang="en";
-
-  // hours: Sun..Sat
+  // Hours, Sun..Sat. null = closed.
   var hrs=[[12,23],[12,23],[12,23],[12,23],[12,23],[12,16],null];
   var D={en:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],fr:["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"]};
-  function fmt(h){return lang==="fr"?h+" h":((h%12)||12)+":00 "+(h>=12?"pm":"am")}
+  function fmt(h,m){m=m||0;return lang==="fr"?h+" h"+(m?String(m).padStart(2,"0"):""):((h%12)||12)+":"+String(m).padStart(2,"0")+" "+(h>=12?"pm":"am")}
   var now;
   try{
-    var p=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Toronto",weekday:"short",hour:"numeric",hour12:false}).formatToParts(new Date());
-    now={d:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(p.find(function(x){return x.type==="weekday"}).value),h:+p.find(function(x){return x.type==="hour"}).value%24};
-  }catch(e){var dt=new Date();now={d:dt.getDay(),h:dt.getHours()}}
+    var p=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Toronto",weekday:"short",hour:"numeric",hour12:false,year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date());
+    var g=function(t){return p.find(function(x){return x.type===t}).value};
+    now={d:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(g("weekday")),h:+g("hour")%24,iso:g("year")+"-"+g("month")+"-"+g("day")};
+  }catch(e){var dt=new Date();now={d:dt.getDay(),h:dt.getHours(),iso:dt.toISOString().slice(0,10)}}
+
   function renderHours(){
     var html="";
     [1,2,3,4,5,6,0].forEach(function(i){
-      var h=hrs[i],t=i===now.d;
-      html+='<div class="row'+(t?' today':'')+'"><span class="d">'+D[lang][i]+'</span><span>'+(h?fmt(h[0])+' – '+fmt(h[1]):'<span class="closed">'+(lang==="fr"?"Fermé · Shabbat":"Closed · Shabbat")+'</span>')+'</span></div>';
+      var h=hrs[i];
+      html+='<div class="row'+(i===now.d?' today':'')+'"><span class="d">'+D[lang][i]+'</span><span>'+(h?fmt(h[0])+' – '+fmt(h[1]):'<span class="closed">'+(lang==="fr"?"Fermé · Shabbat":"Closed · Shabbat")+'</span>')+'</span></div>';
     });
     document.getElementById("hours").innerHTML=html;
-    var t=hrs[now.d],st=document.getElementById("status");
-    st.classList.remove("live","shut");
-    if(t&&now.h>=t[0]&&now.h<t[1]){st.classList.add("live");st.textContent=(lang==="fr"?"Ouvert · jusqu'à ":"Open now · until ")+fmt(t[1]);}
-    else{st.classList.add("shut");st.textContent=lang==="fr"?"Fermé en ce moment":"Closed right now";}
+    var t=hrs[now.d],open=t&&now.h>=t[0]&&now.h<t[1];
+    document.querySelectorAll(".js-status").forEach(function(s){
+      s.classList.toggle("shut",!open);
+      s.lastElementChild.textContent=open?(lang==="fr"?"Ouvert · jusqu'à ":"Open now · until ")+fmt(t[1]):(lang==="fr"?"Fermé en ce moment":"Closed right now");
+    });
   }
-  renderHours();
 
-  // language
+  // Hero style chooser (preview only)
+  var hero=document.getElementById("hero");
+  document.querySelectorAll(".chooser button").forEach(function(b){
+    b.addEventListener("click",function(){
+      hero.dataset.style=b.dataset.s;
+      document.querySelectorAll(".chooser button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});
+      try{localStorage.setItem("chops-hero",b.dataset.s)}catch(e){}
+    });
+  });
+  try{var hs=localStorage.getItem("chops-hero");if(hs){var hb=document.querySelector('.chooser button[data-s="'+hs+'"]');if(hb)hb.click()}}catch(e){}
+
+  // Reservation form
+  var form=document.getElementById("resv"),msg=document.getElementById("r-msg");
+  var date=document.getElementById("r-date"),time=document.getElementById("r-time"),size=document.getElementById("r-size");
+  date.min=now.iso;
+  for(var n=1;n<=10;n++){var o=document.createElement("option");o.value=n;o.textContent=n+(n===1?" guest":" guests");if(n===2)o.selected=true;size.appendChild(o)}
+  function fillTimes(){
+    var day=date.value?new Date(date.value+"T12:00:00").getDay():now.d,h=hrs[day],keep=time.value;
+    time.innerHTML="";
+    if(!h){var c=document.createElement("option");c.value="";c.textContent=lang==="fr"?"Fermé ce jour-là":"Closed that day";time.appendChild(c);return}
+    for(var x=h[0]*60;x<=h[1]*60-60;x+=30){var o=document.createElement("option");o.value=String(Math.floor(x/60)).padStart(2,"0")+":"+String(x%60).padStart(2,"0");o.textContent=fmt(Math.floor(x/60),x%60);time.appendChild(o)}
+    if(keep)time.value=keep;
+  }
+  date.addEventListener("change",fillTimes);fillTimes();
+  function show(kind,text){msg.hidden=false;msg.className="msg "+kind;msg.textContent=text}
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    var name=document.getElementById("r-name").value.trim(),phone=document.getElementById("r-phone").value.trim();
+    if(!name||!phone||!date.value){show("err",lang==="fr"?"Ajoutez votre nom, votre téléphone et une date.":"Please add your name, phone number and a date.");return}
+    if(!hrs[new Date(date.value+"T12:00:00").getDay()]){show("err",lang==="fr"?"Nous sommes fermés le samedi pour Shabbat. Choisissez une autre date.":"We're closed Saturdays for Shabbat. Please pick another date.");return}
+    var body=new URLSearchParams(new FormData(form)).toString();
+    fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:body})
+      .then(function(r){if(!r.ok)throw 0;form.reset();fillTimes();show("ok",lang==="fr"?"Merci! Nous avons reçu votre demande et vous texterons pour confirmer.":"Thanks! We got your request and will text you to confirm.")})
+      .catch(function(){show("err",lang==="fr"?"La demande n'a pas pu être envoyée. Appelez ou textez le (514) 754-5322.":"Your request couldn't be sent from here. Please call or text (514) 754-5322.")});
+  });
+
+  // Language
   var nodes=document.querySelectorAll("[data-fr]");
   nodes.forEach(function(n){n.dataset.en=n.innerHTML});
   function setLang(l){
@@ -440,14 +583,15 @@ footer img{height:26px;width:auto}
     nodes.forEach(function(n){n.innerHTML=l==="fr"?n.dataset.fr:n.dataset.en});
     document.getElementById("lang-en").setAttribute("aria-pressed",l==="en");
     document.getElementById("lang-fr").setAttribute("aria-pressed",l==="fr");
-    renderHours();
+    renderHours();fillTimes();
     try{localStorage.setItem("chops-lang",l)}catch(e){}
   }
   document.getElementById("lang-en").addEventListener("click",function(){setLang("en")});
   document.getElementById("lang-fr").addEventListener("click",function(){setLang("fr")});
+  renderHours();
   try{if(localStorage.getItem("chops-lang")==="fr")setLang("fr")}catch(e){}
 
-  // copy buttons
+  // Copy buttons
   document.querySelectorAll(".copy").forEach(function(b){
     b.addEventListener("click",function(){
       var el=document.getElementById(b.dataset.copy);
