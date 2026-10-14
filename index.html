@@ -165,6 +165,10 @@ form .btn{grid-column:1/-1;justify-self:start}
 .msg.ok{border-color:var(--lime);color:var(--white)}
 .msg.err{border-color:var(--red);color:var(--white)}
 .hp{position:absolute;left:-9999px}
+.req{color:var(--lime);margin-left:4px}
+.reqnote{margin:0;font-size:.9rem;color:var(--soft)}
+.ferr{color:#ff8a8a;font-size:.9rem}
+.f input[aria-invalid="true"]{border-color:#ff6b6b}
 @media (max-width:860px){.reserve .wrap{grid-template-columns:1fr}}
 @media (max-width:520px){form{grid-template-columns:1fr}}
 
@@ -369,13 +373,14 @@ footer .mark{width:110px}
       <form id="resv" name="reservation" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
         <input type="hidden" name="form-name" value="reservation">
         <p class="hp"><label>Leave empty <input name="bot-field" id="bot-field" tabindex="-1" autocomplete="off"></label></p>
-        <div class="f"><label for="r-name" data-fr="Nom">Name</label><input id="r-name" name="name" autocomplete="name" required></div>
-        <div class="f"><label for="r-phone" data-fr="Téléphone">Phone</label><input id="r-phone" name="phone" type="tel" autocomplete="tel" required></div>
-        <div class="f"><label for="r-date">Date</label><input id="r-date" name="date" type="date" required></div>
+        <div class="f"><label for="r-name"><span data-fr="Nom">Name</span><span class="req" aria-hidden="true">*</span></label><input id="r-name" name="name" autocomplete="name" required aria-describedby="e-name"><small class="ferr" id="e-name" hidden></small></div>
+        <div class="f"><label for="r-phone"><span data-fr="Téléphone">Phone</span><span class="req" aria-hidden="true">*</span></label><input id="r-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="514 555-1234" required aria-describedby="e-phone"><small class="ferr" id="e-phone" hidden></small></div>
+        <div class="f"><label for="r-date">Date<span class="req" aria-hidden="true">*</span></label><input id="r-date" name="date" type="date" required aria-describedby="e-date"><small class="ferr" id="e-date" hidden></small></div>
         <div class="f"><label for="r-time" data-fr="Heure">Time</label><select id="r-time" name="time" required></select></div>
         <div class="f"><label for="r-size" data-fr="Personnes">Guests</label><select id="r-size" name="guests" required></select></div>
         <div class="f"><label for="r-occ" data-fr="Occasion">Occasion</label><select id="r-occ" name="occasion"><option value="">None</option><option>Birthday</option><option>Anniversary</option><option>Business</option><option>Other</option></select></div>
         <div class="f full"><label for="r-notes" data-fr="Notes">Notes</label><textarea id="r-notes" name="notes" placeholder="High chair, allergies, seating preference…"></textarea></div>
+        <p class="reqnote f full" data-fr="<span class=&quot;req&quot;>*</span> Obligatoire"><span class="req">*</span> Required</p>
         <button class="btn btn-lime" type="submit" data-fr="Envoyer la demande">Send request</button>
         <p class="msg" id="r-msg" hidden></p>
       </form>
@@ -512,11 +517,37 @@ footer .mark{width:110px}
   }
   date.addEventListener("change",fillTimes);fillTimes();
   function show(kind,text){msg.hidden=false;msg.className="msg "+kind;msg.textContent=text}
+  var T={
+    name:{en:"Please add your name.",fr:"Ajoutez votre nom."},
+    phone:{en:"Please add a phone number so we can confirm.",fr:"Ajoutez un numéro de téléphone pour que nous puissions confirmer."},
+    phoneBad:{en:"Please enter a 10-digit phone number, like 514 555-1234.",fr:"Entrez un numéro à 10 chiffres, comme 514 555-1234."},
+    date:{en:"Please choose a date.",fr:"Choisissez une date."},
+    past:{en:"Please choose today or a later date.",fr:"Choisissez aujourd'hui ou une date future."},
+    sat:{en:"We're closed Saturdays for Shabbat. Please pick another date.",fr:"Nous sommes fermés le samedi pour Shabbat. Choisissez une autre date."},
+    fix:{en:"Please fix the highlighted fields.",fr:"Corrigez les champs indiqués."}
+  };
+  function fieldErr(id,key){
+    var input=document.getElementById("r-"+id),box=document.getElementById("e-"+id);
+    if(key){input.setAttribute("aria-invalid","true");box.textContent=T[key][lang];box.hidden=false}
+    else{input.removeAttribute("aria-invalid");box.hidden=true;box.textContent=""}
+    return !key;
+  }
+  function phoneDigits(v){var d=v.replace(/\D/g,"");if(d.length===11&&d[0]==="1")d=d.slice(1);return d}
+  function checkForm(){
+    var name=document.getElementById("r-name").value.trim(),phone=document.getElementById("r-phone").value.trim(),d=date.value;
+    var a=fieldErr("name",name?"":"name");
+    var b=fieldErr("phone",!phone?"phone":(phoneDigits(phone).length!==10?"phoneBad":""));
+    var c=fieldErr("date",!d?"date":(d<now.iso?"past":(!hrs[new Date(d+"T12:00:00").getDay()]?"sat":"")));
+    return a&&b&&c;
+  }
+  ["r-name","r-phone","r-date"].forEach(function(id){
+    document.getElementById(id).addEventListener("blur",function(){if(this.getAttribute("aria-invalid"))checkForm()});
+    document.getElementById(id).addEventListener("input",function(){if(this.getAttribute("aria-invalid"))checkForm()});
+  });
   form.addEventListener("submit",function(e){
     e.preventDefault();
-    var name=document.getElementById("r-name").value.trim(),phone=document.getElementById("r-phone").value.trim();
-    if(!name||!phone||!date.value){show("err",lang==="fr"?"Ajoutez votre nom, votre téléphone et une date.":"Please add your name, phone number and a date.");return}
-    if(!hrs[new Date(date.value+"T12:00:00").getDay()]){show("err",lang==="fr"?"Nous sommes fermés le samedi pour Shabbat. Choisissez une autre date.":"We're closed Saturdays for Shabbat. Please pick another date.");return}
+    if(!checkForm()){show("err",T.fix[lang]);var bad=form.querySelector('[aria-invalid="true"]');if(bad)bad.focus();return}
+    msg.hidden=true;
     var body=new URLSearchParams(new FormData(form)).toString();
     fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:body})
       .then(function(r){if(!r.ok)throw 0;form.reset();fillTimes();show("ok",lang==="fr"?"Merci! Nous avons reçu votre demande et vous texterons pour confirmer.":"Thanks! We got your request and will text you to confirm.")})
