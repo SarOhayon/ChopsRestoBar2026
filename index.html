@@ -112,6 +112,13 @@ h2{font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.1;letter-spacing:.01em}
 .amex{font-size:.95rem;color:#55534c}
 .slogan{font-family:var(--head);font-size:clamp(1.1rem,2.2vw,1.4rem);letter-spacing:.08em;color:var(--white);margin:0}
 @media (max-width:600px){.chooser{position:relative;top:auto;right:auto;margin:12px 16px;flex-wrap:wrap;justify-content:center}}
+.btn-wa{background:#25d366;color:#0a0a09}
+.btn-wa:hover{background:#3ee07a}
+.wa-i{width:20px;height:20px;fill:currentColor;flex:none}
+.wa-float{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:31;width:58px;height:58px;border-radius:50%;background:#25d366;color:#0a0a09;display:grid;place-items:center;box-shadow:0 10px 28px rgba(0,0,0,.45);transition:transform .2s}
+.wa-float:hover{transform:scale(1.06)}
+.wa-float .wa-i{width:30px;height:30px}
+@media (max-width:760px){.wa-float{bottom:calc(84px + env(safe-area-inset-bottom,0px));right:14px;width:52px;height:52px}}
 .status{display:inline-block;font-family:var(--head);font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
 .status i{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--lime);margin-right:8px;vertical-align:1px}
 .status.shut i{background:var(--red)}
@@ -392,8 +399,8 @@ footer .mark{width:110px}
         <ul><li data-fr="Fiançailles">Engagements</li><li>Hennas</li><li data-fr="Fêtes d'anniversaire">Birthday parties</li><li data-fr="Traiteur">Catering</li></ul>
       </div>
       <div class="cta">
-        <span data-fr="Pour planifier votre événement, appelez le (514) 759-4677.">To plan your event, call (514) 759-4677.</span>
-        <a class="btn btn-line" href="#visit" data-fr="Nous joindre">Contact us</a>
+        <span data-fr="Pour planifier votre événement, appelez le (514) 759-4677 ou écrivez-nous sur WhatsApp.">To plan your event, call (514) 759-4677 or message us on WhatsApp.</span>
+        <span style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn btn-wa" href="https://wa.me/15147545322?text=Hi%20Chops%21%20I%20would%20like%20to%20plan%20a%20private%20event." target="_blank" rel="noopener"><svg class="wa-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.2.1-.2 0-.3 0-.4l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.2.2-.6.2-1 .1-1.2l-.5-.2Z"/></svg><span>WhatsApp</span></a><a class="btn btn-line" href="#visit" data-fr="Nous joindre">Contact us</a></span>
       </div>
     </div>
   </section>
@@ -408,6 +415,7 @@ footer .mark{width:110px}
         <p class="big">(514) 759-4677</p>
         <div class="k" style="margin-top:14px" data-fr="Appel ou texto">Call or text</div>
         <p class="big">(514) 754-5322</p>
+        <a class="btn btn-wa" style="margin-top:18px" href="https://wa.me/15147545322?text=Hi%20Chops%21%20I%20would%20like%20to%20reserve%20a%20table." target="_blank" rel="noopener"><svg class="wa-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.2.1-.2 0-.3 0-.4l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.2.2-.6.2-1 .1-1.2l-.5-.2Z"/></svg><span data-fr="Réserver par WhatsApp">Reserve on WhatsApp</span></a>
       </div>
       <form id="resv" name="reservation" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
         <input type="hidden" name="form-name" value="reservation">
@@ -456,7 +464,7 @@ footer .mark{width:110px}
         </div>
         <div class="contact">
           <div><div class="k" data-fr="Appelez">Call</div><div class="v"><span id="p1">(514) 759-4677</span><button class="copy" type="button" data-copy="p1">Copy</button></div></div>
-          <div><div class="k" data-fr="Appel ou texto">Call or text</div><div class="v"><span id="p2">(514) 754-5322</span><button class="copy" type="button" data-copy="p2">Copy</button></div></div>
+          <div><div class="k" data-fr="Appel, texto ou WhatsApp">Call, text or WhatsApp</div><div class="v"><span id="p2">(514) 754-5322</span><button class="copy" type="button" data-copy="p2">Copy</button></div><a class="btn btn-wa" style="margin-top:10px;min-width:0;padding:11px 16px;font-size:.8rem" href="https://wa.me/15147545322?text=Hi%20Chops%21%20I%20have%20a%20question." target="_blank" rel="noopener"><svg class="wa-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.2.1-.2 0-.3 0-.4l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.2.2-.6.2-1 .1-1.2l-.5-.2Z"/></svg><span data-fr="Écrire sur WhatsApp">Message on WhatsApp</span></a></div>
           <div><div class="k">Email</div><div class="v" style="font-size:1.1rem"><span id="em">chops2020restobar@gmail.com</span><button class="copy" type="button" data-copy="em">Copy</button></div></div>
           <div><div class="k" data-fr="Heures">Hours</div><div class="hours" id="hours"></div></div>
         </div>
@@ -505,6 +513,8 @@ footer .mark{width:110px}
     <span>5322 Queen Mary Rd, Montréal · (514) 759-4677 · chops2020restobar@gmail.com</span>
   </div>
 </footer>
+
+<a class="wa-float" href="https://wa.me/15147545322?text=Hi%20Chops%21%20I%20have%20a%20question." target="_blank" rel="noopener" aria-label="Message Chops on WhatsApp"><svg class="wa-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.2.1-.2 0-.3 0-.4l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.2.2-.6.2-1 .1-1.2l-.5-.2Z"/></svg></a>
 
 <div class="dock">
   <a class="btn btn-lime" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener" data-fr="Commander">Order</a>
@@ -572,7 +582,7 @@ footer .mark{width:110px}
     var body=new URLSearchParams(new FormData(form)).toString();
     fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:body})
       .then(function(r){if(!r.ok)throw 0;form.reset();fillTimes();show("ok",lang==="fr"?"Merci! Nous avons reçu votre demande et vous texterons pour confirmer.":"Thanks! We got your request and will text you to confirm.")})
-      .catch(function(){show("err",lang==="fr"?"La demande n'a pas pu être envoyée. Appelez ou textez le (514) 754-5322.":"Your request couldn't be sent from here. Please call or text (514) 754-5322.")});
+      .catch(function(){show("err",lang==="fr"?"La demande n'a pas pu être envoyée. Appelez, textez ou écrivez sur WhatsApp au (514) 754-5322.":"Your request couldn't be sent from here. Please call, text or WhatsApp (514) 754-5322.")});
   });
 
   // Language
