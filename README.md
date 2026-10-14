@@ -10,5 +10,4 @@ Online ordering links to the UEAT ordering page: https://chopsrestobar.order-onl
 
 ## Before going live
 
-- The top of the homepage has three styles to compare (Photo, Minimal, Split). Once one is chosen, remove the other two and the "Preview · top style" chooser.
 - The table request form uses Netlify Forms. When the site is hosted on Netlify, requests arrive in the Netlify dashboard and can be emailed to the restaurant.
