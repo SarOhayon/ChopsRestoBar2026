@@ -8,6 +8,7 @@ Website for Chops 2020 Restobar, a kosher Asian fusion steakhouse and sushi bar 
 
 Online ordering links to the UEAT ordering page: https://chopsrestobar.order-online.ai
 
-## Before going live
 
-- The table request form uses Netlify Forms. When the site is hosted on Netlify, requests arrive in the Netlify dashboard and can be emailed to the restaurant.
+## Reservations
+
+Reservations are taken on WhatsApp at (514) 754-5322. Every "Reserve" button opens a WhatsApp chat with a booking message (name, date, time, guests) ready to fill in, in English or French.

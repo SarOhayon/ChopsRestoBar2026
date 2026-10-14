@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Chops Resto-Bar: kosher Asian fusion steakhouse and sushi bar under KSR Kashruth supervision, 5322 Queen Mary Rd, Montréal. Order online, reserve a table or book a private event.">
+<meta name="description" content="Chops Resto-Bar: kosher Asian fusion steakhouse and sushi bar under KSR Kashruth supervision, 5322 Queen Mary Rd, Montréal. Order online, reserve on WhatsApp or book a private event.">
 <link rel="icon" href="chops-logo.svg">
 <title>Chops 2020 Restobar</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -150,27 +150,12 @@ h2{font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.1;letter-spacing:.01em}
 
 /* reserve */
 .reserve{background:var(--coal);border-block:1px solid var(--line)}
-.reserve .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,80px)}
-.reserve .side p{color:var(--soft)}
-.reserve .side .big{font-family:var(--head);font-size:1.5rem;letter-spacing:.04em;color:var(--white);margin:4px 0 0}
-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.f{display:grid;gap:6px;min-width:0}
-.f.full{grid-column:1/-1}
-.f label{font-family:var(--head);font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
-.f input,.f select,.f textarea{width:100%;font:inherit;font-size:1rem;color:var(--white);background:var(--black);border:1px solid var(--line);border-radius:2px;padding:12px 14px}
-.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--lime)}
-.f textarea{min-height:90px;resize:vertical}
-form .btn{grid-column:1/-1;justify-self:start}
-.msg{grid-column:1/-1;margin:0;padding:14px 16px;border:1px solid var(--line);font-size:1rem}
-.msg.ok{border-color:var(--lime);color:var(--white)}
-.msg.err{border-color:var(--red);color:var(--white)}
-.hp{position:absolute;left:-9999px}
-.req{color:var(--lime);margin-left:4px}
-.reqnote{margin:0;font-size:.9rem;color:var(--soft)}
-.ferr{color:#ff8a8a;font-size:.9rem}
-.f input[aria-invalid="true"]{border-color:#ff6b6b}
+.reserve .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,64px);align-items:center}
+.reserve .steps{display:grid;gap:18px;justify-items:start}
+.reserve .steps p{margin:0;color:var(--soft);max-width:44ch}
+.reserve .small{font-size:.95rem}
+.btn-big{padding:18px 30px;font-size:1rem}
 @media (max-width:860px){.reserve .wrap{grid-template-columns:1fr}}
-@media (max-width:520px){form{grid-template-columns:1fr}}
 
 /* visit */
 .visit .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,64px)}
@@ -232,13 +217,13 @@ footer .mark{width:110px}
       <a class="t" href="#menu">Menu</a>
       <a class="t" href="#sushi">Sushi</a>
       <a class="t" href="#events" data-fr="Événements">Events</a>
-      <a class="t" href="#reserve" data-fr="Réserver">Reserve</a>
+      <a class="t" href="https://wa.me/15147545322?text=Hi%20Chops%21%20I%27d%20like%20to%20reserve%20a%20table.%0AName%3A%20%0ADate%3A%20%0ATime%3A%20%0AGuests%3A%20" data-wa-fr="https://wa.me/15147545322?text=Bonjour%20Chops%21%20J%27aimerais%20r%C3%A9server%20une%20table.%0ANom%20%3A%20%0ADate%20%3A%20%0AHeure%20%3A%20%0APersonnes%20%3A%20" target="_blank" rel="noopener" data-fr="Réserver">Reserve</a>
       <a class="t" href="#visit" data-fr="Nous trouver">Find us</a>
       <div class="lang" role="group" aria-label="Language">
         <button type="button" id="lang-en" aria-pressed="true">EN</button>
         <button type="button" id="lang-fr" aria-pressed="false">FR</button>
       </div>
-      <a class="btn btn-line" href="#reserve" data-fr="Réserver">Reserve</a>
+      <a class="btn btn-line" href="https://wa.me/15147545322?text=Hi%20Chops%21%20I%27d%20like%20to%20reserve%20a%20table.%0AName%3A%20%0ADate%3A%20%0ATime%3A%20%0AGuests%3A%20" data-wa-fr="https://wa.me/15147545322?text=Bonjour%20Chops%21%20J%27aimerais%20r%C3%A9server%20une%20table.%0ANom%20%3A%20%0ADate%20%3A%20%0AHeure%20%3A%20%0APersonnes%20%3A%20" target="_blank" rel="noopener"><span data-fr="Réserver">Reserve</span></a>
       <a class="btn btn-lime" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener" data-fr="Commander">Order</a>
     </nav>
   </div>
@@ -257,7 +242,7 @@ footer .mark{width:110px}
         <p data-fr="Des saveurs d'Asie et d'Amérique du Nord, entièrement cachères. 5322, chemin Queen-Mary, Montréal.">Flavours from Asia and North America, fully kosher. 5322 Queen Mary Road, Montréal.</p>
         <div class="pair">
           <a class="btn btn-lime" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener" data-fr="Commander en ligne">Order online</a>
-          <a class="btn btn-line" href="#reserve" data-fr="Réserver une table">Reserve a table</a>
+          <a class="btn btn-line" href="https://wa.me/15147545322?text=Hi%20Chops%21%20I%27d%20like%20to%20reserve%20a%20table.%0AName%3A%20%0ADate%3A%20%0ATime%3A%20%0AGuests%3A%20" data-wa-fr="https://wa.me/15147545322?text=Bonjour%20Chops%21%20J%27aimerais%20r%C3%A9server%20une%20table.%0ANom%20%3A%20%0ADate%20%3A%20%0AHeure%20%3A%20%0APersonnes%20%3A%20" target="_blank" rel="noopener"><svg class="wa-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.2.1-.2 0-.3 0-.4l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.2.2-.6.2-1 .1-1.2l-.5-.2Z"/></svg><span data-fr="Réserver une table">Reserve a table</span></a>
         </div>
         <div class="cert">
           <span class="status js-status"><i></i><span>Hours</span></span>
@@ -360,30 +345,15 @@ footer .mark{width:110px}
 
   <section class="sec reserve" id="reserve">
     <div class="wrap">
-      <div class="side">
+      <div>
         <p class="label" data-fr="Réservations">Reservations</p>
-        <h2 data-fr="Réserver une table">Reserve a table</h2>
-        <p data-fr="Envoyez une demande et nous vous texterons pour confirmer. Pour ce soir ou un groupe de plus de 10, appelez-nous. Groupe plus grand? Voyez nos événements privés.">Send a request and we'll text you to confirm. For tonight, or a group of more than 10, please call. Bigger party? See private events above.</p>
-        <div class="k" style="margin-top:22px" data-fr="Appelez">Call</div>
-        <p class="big">(514) 759-4677</p>
-        <div class="k" style="margin-top:14px" data-fr="Appel ou texto">Call or text</div>
-        <p class="big">(514) 754-5322</p>
-        <a class="btn btn-wa" style="margin-top:18px" href="https://wa.me/15147545322?text=Hi%20Chops%21%20I%20would%20like%20to%20reserve%20a%20table." target="_blank" rel="noopener"><svg class="wa-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.2.1-.2 0-.3 0-.4l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.2.2-.6.2-1 .1-1.2l-.5-.2Z"/></svg><span data-fr="Réserver par WhatsApp">Reserve on WhatsApp</span></a>
+        <h2 data-fr="Réservez sur WhatsApp">Reserve on WhatsApp</h2>
       </div>
-      <form id="resv" name="reservation" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
-        <input type="hidden" name="form-name" value="reservation">
-        <p class="hp"><label>Leave empty <input name="bot-field" id="bot-field" tabindex="-1" autocomplete="off"></label></p>
-        <div class="f"><label for="r-name"><span data-fr="Nom">Name</span><span class="req" aria-hidden="true">*</span></label><input id="r-name" name="name" autocomplete="name" required aria-describedby="e-name"><small class="ferr" id="e-name" hidden></small></div>
-        <div class="f"><label for="r-phone"><span data-fr="Téléphone">Phone</span><span class="req" aria-hidden="true">*</span></label><input id="r-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="514 555-1234" required aria-describedby="e-phone"><small class="ferr" id="e-phone" hidden></small></div>
-        <div class="f"><label for="r-date">Date<span class="req" aria-hidden="true">*</span></label><input id="r-date" name="date" type="date" required aria-describedby="e-date"><small class="ferr" id="e-date" hidden></small></div>
-        <div class="f"><label for="r-time" data-fr="Heure">Time</label><select id="r-time" name="time" required></select></div>
-        <div class="f"><label for="r-size" data-fr="Personnes">Guests</label><select id="r-size" name="guests" required></select></div>
-        <div class="f"><label for="r-occ" data-fr="Occasion">Occasion</label><select id="r-occ" name="occasion"><option value="">None</option><option>Birthday</option><option>Anniversary</option><option>Business</option><option>Other</option></select></div>
-        <div class="f full"><label for="r-notes" data-fr="Notes">Notes</label><textarea id="r-notes" name="notes" placeholder="High chair, allergies, seating preference…"></textarea></div>
-        <p class="reqnote f full" data-fr="<span class=&quot;req&quot;>*</span> Obligatoire"><span class="req">*</span> Required</p>
-        <button class="btn btn-lime" type="submit" data-fr="Envoyer la demande">Send request</button>
-        <p class="msg" id="r-msg" hidden></p>
-      </form>
+      <div class="steps">
+        <p data-fr="Envoyez-nous la date, l'heure et le nombre de personnes. Nous confirmons votre table directement dans la conversation.">Send us your date, time and number of guests. We confirm your table right in the chat.</p>
+        <a class="btn btn-wa btn-big" href="https://wa.me/15147545322?text=Hi%20Chops%21%20I%27d%20like%20to%20reserve%20a%20table.%0AName%3A%20%0ADate%3A%20%0ATime%3A%20%0AGuests%3A%20" data-wa-fr="https://wa.me/15147545322?text=Bonjour%20Chops%21%20J%27aimerais%20r%C3%A9server%20une%20table.%0ANom%20%3A%20%0ADate%20%3A%20%0AHeure%20%3A%20%0APersonnes%20%3A%20" target="_blank" rel="noopener"><svg class="wa-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.2.1-.2 0-.3 0-.4l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.2.2-.6.2-1 .1-1.2l-.5-.2Z"/></svg><span data-fr="Réserver sur WhatsApp">Reserve on WhatsApp</span></a>
+        <p class="small" data-fr="WhatsApp : (514) 754-5322 · Groupe de plus de 12? Voyez nos événements privés.">WhatsApp: (514) 754-5322 · Group of more than 12? See private events.</p>
+      </div>
     </div>
   </section>
 
@@ -455,7 +425,7 @@ footer .mark{width:110px}
       <p class="slogan" data-fr="Aimez la vie, vivez bien et mangez cachère.">Love life, live well and eat kosher.</p>
       <div class="pair">
         <a class="btn btn-lime" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener" data-fr="Commander en ligne">Order online</a>
-        <a class="btn btn-line" href="#reserve" data-fr="Réserver une table">Reserve a table</a>
+        <a class="btn btn-line" href="https://wa.me/15147545322?text=Hi%20Chops%21%20I%27d%20like%20to%20reserve%20a%20table.%0AName%3A%20%0ADate%3A%20%0ATime%3A%20%0AGuests%3A%20" data-wa-fr="https://wa.me/15147545322?text=Bonjour%20Chops%21%20J%27aimerais%20r%C3%A9server%20une%20table.%0ANom%20%3A%20%0ADate%20%3A%20%0AHeure%20%3A%20%0APersonnes%20%3A%20" target="_blank" rel="noopener"><svg class="wa-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.2.1-.2 0-.3 0-.4l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.2.2-.6.2-1 .1-1.2l-.5-.2Z"/></svg><span data-fr="Réserver une table">Reserve a table</span></a>
       </div>
     </div>
   </section>
@@ -472,7 +442,7 @@ footer .mark{width:110px}
 
 <div class="dock">
   <a class="btn btn-lime" href="https://chopsrestobar.order-online.ai" target="_blank" rel="noopener" data-fr="Commander">Order</a>
-  <a class="btn btn-line" href="#reserve" data-fr="Réserver">Reserve</a>
+  <a class="btn btn-line" href="https://wa.me/15147545322?text=Hi%20Chops%21%20I%27d%20like%20to%20reserve%20a%20table.%0AName%3A%20%0ADate%3A%20%0ATime%3A%20%0AGuests%3A%20" data-wa-fr="https://wa.me/15147545322?text=Bonjour%20Chops%21%20J%27aimerais%20r%C3%A9server%20une%20table.%0ANom%20%3A%20%0ADate%20%3A%20%0AHeure%20%3A%20%0APersonnes%20%3A%20" target="_blank" rel="noopener"><span data-fr="Réserver">Reserve</span></a>
 </div>
 
 <script>
@@ -503,57 +473,6 @@ footer .mark{width:110px}
     });
   }
 
-  // Reservation form
-  var form=document.getElementById("resv"),msg=document.getElementById("r-msg");
-  var date=document.getElementById("r-date"),time=document.getElementById("r-time"),size=document.getElementById("r-size");
-  date.min=now.iso;
-  for(var n=1;n<=10;n++){var o=document.createElement("option");o.value=n;o.textContent=n+(n===1?" guest":" guests");if(n===2)o.selected=true;size.appendChild(o)}
-  function fillTimes(){
-    var day=date.value?new Date(date.value+"T12:00:00").getDay():now.d,h=hrs[day],keep=time.value;
-    time.innerHTML="";
-    if(!h){var c=document.createElement("option");c.value="";c.textContent=lang==="fr"?"Fermé ce jour-là":"Closed that day";time.appendChild(c);return}
-    for(var x=h[0]*60;x<=h[1]*60-60;x+=30){var o=document.createElement("option");o.value=String(Math.floor(x/60)).padStart(2,"0")+":"+String(x%60).padStart(2,"0");o.textContent=fmt(Math.floor(x/60),x%60);time.appendChild(o)}
-    if(keep)time.value=keep;
-  }
-  date.addEventListener("change",fillTimes);fillTimes();
-  function show(kind,text){msg.hidden=false;msg.className="msg "+kind;msg.textContent=text}
-  var T={
-    name:{en:"Please add your name.",fr:"Ajoutez votre nom."},
-    phone:{en:"Please add a phone number so we can confirm.",fr:"Ajoutez un numéro de téléphone pour que nous puissions confirmer."},
-    phoneBad:{en:"Please enter a 10-digit phone number, like 514 555-1234.",fr:"Entrez un numéro à 10 chiffres, comme 514 555-1234."},
-    date:{en:"Please choose a date.",fr:"Choisissez une date."},
-    past:{en:"Please choose today or a later date.",fr:"Choisissez aujourd'hui ou une date future."},
-    sat:{en:"We're closed Saturdays for Shabbat. Please pick another date.",fr:"Nous sommes fermés le samedi pour Shabbat. Choisissez une autre date."},
-    fix:{en:"Please fix the highlighted fields.",fr:"Corrigez les champs indiqués."}
-  };
-  function fieldErr(id,key){
-    var input=document.getElementById("r-"+id),box=document.getElementById("e-"+id);
-    if(key){input.setAttribute("aria-invalid","true");box.textContent=T[key][lang];box.hidden=false}
-    else{input.removeAttribute("aria-invalid");box.hidden=true;box.textContent=""}
-    return !key;
-  }
-  function phoneDigits(v){var d=v.replace(/\D/g,"");if(d.length===11&&d[0]==="1")d=d.slice(1);return d}
-  function checkForm(){
-    var name=document.getElementById("r-name").value.trim(),phone=document.getElementById("r-phone").value.trim(),d=date.value;
-    var a=fieldErr("name",name?"":"name");
-    var b=fieldErr("phone",!phone?"phone":(phoneDigits(phone).length!==10?"phoneBad":""));
-    var c=fieldErr("date",!d?"date":(d<now.iso?"past":(!hrs[new Date(d+"T12:00:00").getDay()]?"sat":"")));
-    return a&&b&&c;
-  }
-  ["r-name","r-phone","r-date"].forEach(function(id){
-    document.getElementById(id).addEventListener("blur",function(){if(this.getAttribute("aria-invalid"))checkForm()});
-    document.getElementById(id).addEventListener("input",function(){if(this.getAttribute("aria-invalid"))checkForm()});
-  });
-  form.addEventListener("submit",function(e){
-    e.preventDefault();
-    if(!checkForm()){show("err",T.fix[lang]);var bad=form.querySelector('[aria-invalid="true"]');if(bad)bad.focus();return}
-    msg.hidden=true;
-    var body=new URLSearchParams(new FormData(form)).toString();
-    fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:body})
-      .then(function(r){if(!r.ok)throw 0;form.reset();fillTimes();show("ok",lang==="fr"?"Merci! Nous avons reçu votre demande et vous texterons pour confirmer.":"Thanks! We got your request and will text you to confirm.")})
-      .catch(function(){show("err",lang==="fr"?"La demande n'a pas pu être envoyée. Appelez, textez ou écrivez sur WhatsApp au (514) 754-5322.":"Your request couldn't be sent from here. Please call, text or WhatsApp (514) 754-5322.")});
-  });
-
   // Language
   var nodes=document.querySelectorAll("[data-fr]");
   nodes.forEach(function(n){n.dataset.en=n.innerHTML});
@@ -562,7 +481,8 @@ footer .mark{width:110px}
     nodes.forEach(function(n){n.innerHTML=l==="fr"?n.dataset.fr:n.dataset.en});
     document.getElementById("lang-en").setAttribute("aria-pressed",l==="en");
     document.getElementById("lang-fr").setAttribute("aria-pressed",l==="fr");
-    renderHours();fillTimes();
+    renderHours();
+    document.querySelectorAll("[data-wa-fr]").forEach(function(a){if(!a.dataset.waEn)a.dataset.waEn=a.href;a.href=l==="fr"?a.dataset.waFr:a.dataset.waEn});
     try{localStorage.setItem("chops-lang",l)}catch(e){}
   }
   document.getElementById("lang-en").addEventListener("click",function(){setLang("en")});
